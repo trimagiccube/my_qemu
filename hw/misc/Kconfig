@@ -30,6 +30,11 @@ config EDU
     default y if TEST_DEVICES
     depends on PCI && MSI_NONBROKEN
 
+config LEV
+    bool
+    default y if TEST_DEVICES
+    depends on PCI && MSI_NONBROKEN
+
 config PCA9552
     bool
     depends on I2C
