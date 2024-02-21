@@ -140,7 +140,7 @@ static void pci_levdev_class_init(ObjectClass *klass, void *data)
     k->realize = pci_levdev_init;
     k->exit = pci_levdev_uninit;
     k->vendor_id = PCI_VENDOR_ID_QEMU;
-    k->device_id = 0x0001;
+    k->device_id = 0x0006;
     k->revision = 0x00;
     k->class_id = PCI_CLASS_OTHERS;
 //    dc->desc = "Levex PCI";

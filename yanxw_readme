@@ -1,0 +1,23 @@
+build:
+
+mkdir build;
+cd build;
+../configure --target-list=x86_64-softmmu --enable-slirp
+make -j32
+
+run qemu with this dir:
+vgpu_test_passthrough.sh
+
+login in guest:
+ssh -p 10022 yanxw@localhost
+
+when login in guest, you will see lev-pci device.
+yanxw@geust_test:~/mkasan/my_kasan$ lspci -vvv -s 00:06.0
+00:06.0 Unclassified device [00ff]: Device 1234:0006
+	Subsystem: Red Hat, Inc. Device 1100
+	Physical Slot: 6
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Region 0: Memory at febf1000 (32-bit, non-prefetchable) [size=128]
+
+
