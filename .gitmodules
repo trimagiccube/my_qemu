@@ -43,3 +43,6 @@
 [submodule "tests/lcitool/libvirt-ci"]
 	path = tests/lcitool/libvirt-ci
 	url = https://gitlab.com/libvirt/libvirt-ci.git
+[submodule "dummy_pci_driver"]
+	path = dummy_pci_driver
+	url = git@github.com:trimagiccube/dummy_pci_driver.git

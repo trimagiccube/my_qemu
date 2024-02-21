@@ -1,3 +1,6 @@
+repo base:
+https://github.com/qemu/qemu/tree/stable-8.2
+
 build:
 
 mkdir build;
@@ -21,3 +24,8 @@ yanxw@geust_test:~/mkasan/my_kasan$ lspci -vvv -s 00:06.0
 	Region 0: Memory at febf1000 (32-bit, non-prefetchable) [size=128]
 
 
+QA-1:
+notice: network backend ‘user‘ is not compiled into this binary
+answer: https://devanswershub.com/how-to-enable-the-user-network-backend-in-qemu-7-2-0/
+$ sudo apt-get install libslirp-dev;  then configure qemu with --enable-slirp
+The ‘user’ networking backend requires the ‘slirp’ library, which needs to be installed before configuring and building QEMU
